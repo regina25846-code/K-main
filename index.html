@@ -1,4 +1,9 @@
-
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
 <title>K-시리즈 — 알툴즈를 대체하는 나만의 데스크톱 5부작</title>
 
 <style>
@@ -240,7 +245,10 @@ a{color:inherit}
   white-space:nowrap;
   transition:color .18s ease, background .18s ease;
 }
-.dock-nav a:hover{color:var(--ink);background:var(--glass-inner)}
+@media (hover:hover) and (pointer:fine){
+  .dock-nav a:hover{color:var(--ink);background:var(--glass-inner)}
+}
+.dock-nav a:focus-visible{color:var(--ink);background:var(--glass-inner)}
 .toggle{
   flex:none;width:34px;height:34px;border-radius:50%;
   display:grid;place-items:center;cursor:pointer;
@@ -249,7 +257,10 @@ a{color:inherit}
   color:var(--ink-2);
   transition:color .18s ease, transform .18s ease, background .18s ease;
 }
-.toggle:hover{color:var(--ink);transform:rotate(-18deg);background:var(--glass-solid)}
+@media (hover:hover) and (pointer:fine){
+  .toggle:hover{color:var(--ink);transform:rotate(-18deg);background:var(--glass-solid)}
+}
+.toggle:focus-visible{color:var(--ink);background:var(--glass-solid)}
 .toggle svg{width:16px;height:16px;display:block}
 .toggle .sun{display:none}
 @media (prefers-color-scheme:dark){.toggle .sun{display:block}.toggle .moon{display:none}}
@@ -357,7 +368,14 @@ a{color:inherit}
 .pane:nth-child(3){--tx:0px;--ty:-56px;--rot:0deg;z-index:3}
 .pane:nth-child(4){--tx:118px;--ty:-38px;--rot:6.5deg;z-index:2}
 .pane:nth-child(5){--tx:232px;--ty:-6px;--rot:13deg;z-index:1}
-.pane:hover,.pane:focus-visible{
+@media (hover:hover) and (pointer:fine){
+  .pane:hover{
+    transform:translate3d(calc(var(--tx) * var(--spread)), calc(var(--ty) * var(--spread) - 16px), 0) rotate(0deg);
+    box-shadow:var(--sh-inset), var(--sh-near), var(--sh-mid), var(--sh-lift);
+    z-index:9;
+  }
+}
+.pane:focus-visible{
   transform:translate3d(calc(var(--tx) * var(--spread)), calc(var(--ty) * var(--spread) - 16px), 0) rotate(0deg);
   box-shadow:var(--sh-inset), var(--sh-near), var(--sh-mid), var(--sh-lift);
   z-index:9;
@@ -412,9 +430,18 @@ a{color:inherit}
 .app.rev{grid-template-columns:1fr 196px}
 .app.rev .well{order:2}
 .app.rev .copy{order:1}
-.app:hover{
-  transform:translateY(-4px);
-  box-shadow:var(--sh-inset), var(--sh-near), var(--sh-mid), var(--sh-lift);
+@media (hover:hover) and (pointer:fine){
+  /* .app carries .rise, whose `.rise.in{transform:none}` sits later in the sheet at
+     equal specificity — so the lift needs .app.in:hover (0,3,0) to actually win. */
+  .app.in:hover,.app:hover{
+    transform:translateY(-4px);
+    box-shadow:var(--sh-inset), var(--sh-near), var(--sh-mid), var(--sh-lift);
+  }
+  .app.rise.in{
+    transition:opacity .8s cubic-bezier(.22,1,.36,1),
+               transform .45s cubic-bezier(.22,1,.36,1),
+               box-shadow .45s ease;
+  }
 }
 
 /* icon panel floats at a nearer depth than the slab */
@@ -443,7 +470,20 @@ a{color:inherit}
     0 34px 54px -30px rgba(18,28,54,.5);
   transition:transform .45s cubic-bezier(.22,1,.36,1);
 }
-.app:hover .badge{transform:translateY(-6px) rotate(-2.5deg)}
+@media (hover:hover) and (pointer:fine){
+  .app:hover .badge{transform:translateY(-6px) rotate(-2.5deg)}
+}
+/* Touch devices get the same gesture on scroll-in instead of on hover: the badge
+   settles into place once, then rests. Resting state is the CSS default, so if the
+   script never runs the badge simply sits still — it can never be left mid-pose. */
+@keyframes badge-settle{
+  0%{transform:translateY(12px) rotate(-5deg)}
+  60%{transform:translateY(-4px) rotate(1.5deg)}
+  100%{transform:none}
+}
+@media (hover:none){
+  .app.seen .badge{animation:badge-settle .72s cubic-bezier(.22,1,.36,1) both}
+}
 .badge .ico{width:96px;height:96px;display:block}
 
 .copy{min-width:0}
@@ -506,13 +546,19 @@ a{color:inherit}
   transition:transform .18s ease, box-shadow .22s ease, color .18s ease;
 }
 .dl svg{width:13px;height:13px;transition:transform .22s ease;color:var(--tint-ink)}
-.dl:hover{
-  transform:translateY(-2px);
+@media (hover:hover) and (pointer:fine){
+  .dl:hover{
+    transform:translateY(-2px);
+    color:var(--tint-ink);
+    box-shadow:inset 0 1px 0 var(--glass-hi), var(--sh-near), 0 14px 26px -10px var(--tint-deep);
+  }
+  .dl:hover svg{transform:translateY(2px)}
+  .dl:active{transform:translateY(0)}
+}
+.dl:focus-visible{
   color:var(--tint-ink);
   box-shadow:inset 0 1px 0 var(--glass-hi), var(--sh-near), 0 14px 26px -10px var(--tint-deep);
 }
-.dl:hover svg{transform:translateY(2px)}
-.dl:active{transform:translateY(0)}
 
 /* ── Footer ───────────────────────────────────────────────── */
 .foot{
@@ -567,7 +613,7 @@ a{color:inherit}
     border-radius:20px;
     scroll-snap-align:center;
   }
-  .pane:hover,.pane:focus-visible{transform:translateY(-4px)}
+  .pane:focus-visible{transform:translateY(-4px)}
   .pane .ico{width:48px;height:48px}
   .app,.app.rev{
     grid-template-columns:1fr;
@@ -585,12 +631,46 @@ a{color:inherit}
   .stats div{padding:11px 15px;font-size:12px}
 }
 
+/* a narrow *desktop* window still uses the shelf layout — keep its hover honest */
+@media (max-width:720px) and (hover:hover) and (pointer:fine){
+  .pane:hover{transform:translateY(-4px)}
+}
+
+/* ── Touch input ──────────────────────────────────────────────
+   No hover state exists on a finger, so nothing above fires here. Instead every
+   tappable surface answers the press itself and lets go the moment the finger
+   does — press-in, not latch-on. */
+@media (hover:none){
+  .pane,.dl,.dock-nav a,.toggle{
+    -webkit-tap-highlight-color:transparent;
+    touch-action:manipulation;
+  }
+  .pane{transition:transform .16s cubic-bezier(.3,.7,.4,1), box-shadow .16s ease}
+  .pane:active{
+    transform:scale(.945);
+    box-shadow:var(--sh-inset), var(--sh-near), var(--sh-mid);
+  }
+  .dl{transition:transform .14s cubic-bezier(.3,.7,.4,1), box-shadow .16s ease, color .14s ease}
+  .dl:active{
+    transform:scale(.955);
+    color:var(--tint-ink);
+    box-shadow:inset 0 1px 0 var(--glass-hi), var(--sh-near), 0 4px 10px -6px var(--tint-deep);
+  }
+  .dl:active svg{transform:translateY(2px)}
+  .toggle{transition:transform .14s cubic-bezier(.3,.7,.4,1), background .14s ease, color .14s ease}
+  .toggle:active{transform:scale(.9);color:var(--ink);background:var(--glass-solid)}
+  .dock-nav a:active{color:var(--ink);background:var(--glass-inner)}
+}
+
 @media (prefers-reduced-motion:reduce){
   *{animation-duration:.001ms !important;transition-duration:.001ms !important}
   .rise{opacity:1;transform:none}
   .lamp{display:none}
+  .app.seen .badge{animation:none}
 }
 </style>
+</head>
+<body>
 
 <div class="wallpaper" aria-hidden="true"></div>
 <div class="lamp" aria-hidden="true"></div>
@@ -1209,6 +1289,24 @@ a{color:inherit}
     items.forEach(function(el){ if(!el.closest('.hero')) io.observe(el); });
   }
 
+  /* Touch: iOS only honours :active once the document has a touch listener,
+     and the badge settle replaces the hover pose the finger can never trigger. */
+  if(window.matchMedia('(hover: none)').matches){
+    document.addEventListener('touchstart', function(){}, {passive:true});
+
+    var slabs = document.querySelectorAll('.app');
+    if(reduce || !('IntersectionObserver' in window)){
+      slabs.forEach(function(el){ el.classList.add('seen'); });
+    } else {
+      var bio = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){ e.target.classList.add('seen'); bio.unobserve(e.target); }
+        });
+      }, {rootMargin:'0px 0px -12% 0px', threshold:.25});
+      slabs.forEach(function(el){ bio.observe(el); });
+    }
+  }
+
   /* studio lamp follows the pointer on fine-pointer devices */
   if(!reduce && window.matchMedia('(pointer: fine)').matches){
     var lamp = document.querySelector('.lamp');
@@ -1228,3 +1326,6 @@ a{color:inherit}
   }
 })();
 </script>
+
+</body>
+</html>
