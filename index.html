@@ -4,7 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<title>K-시리즈 — 알툴즈를 대체하는 나만의 데스크톱 6부작</title>
+<script>
+/* 첫 화면부터 테마를 정한다(깜빡임 없음): 테마 버튼으로 고른 값이 있으면 그것, 없으면 어둡게 */
+(function(){var t=null;try{t=localStorage.getItem('kseries-theme');}catch(e){}
+document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');})();
+</script>
+<title>K-시리즈 — 알툴즈를 대체하는 나만의 데스크톱 7부작</title>
 
 <style>
 /* ═══════════════════════════════════════════════════════════════
@@ -47,6 +52,26 @@
   src:url(data:font/woff2;base64,d09GMgABAAAAAAiIAAwAAAAADeQAAAg6AAFPGgAAAAAAAAAAAAAAAAAAAAAAAAAAGyAcKgZgAIFMCpJ0jm4BNgIkAy4LLAAEIAWCNAcgG98KyMYHaJv/rjg87gjBwmJRrnWRjjHWLNgAt0Yba1EoP6xFNKsoF3XCIkP7h/ulXkRatNiRn8iPeldRVKsSH00HdDdKmhXIJjTwgR8wzsb/psETdRkYxc6Kz30FBAAOIQgDYexiskAKGgCqqnAmyuy1URfk/eTpsWMzEahg43VacpAqAAMwkfQNAMtfXuRVPCZnNMBRIBy6SdCjnSzW/ji9Pd9jZVdW+gKPDPGl2ExHM5uLOvBYAsBB4wYJVtM4nI+AjvdL3Pb8ndjN71buNu2Zv2/Avmv7Aw80OZx+rPh4wfFfpy9feHnx3a1Hd3mPtaoK0O0T+//Xj+zzt8+vPkd6jzHtMrXr+b3Hg66rjZpOUztpO3Rt07B1vcYtGrL1ToHAWeIHUQSYlraI3Cuno/h0mQK5C9NSpkB5QKSDjPchRipTy3m6Jl1Hy0vlSoUglSj5IFrKCxr6DErTC6UD1HwOQj1BxSukz9kgiZR38ZTLEr7n271XdtvLlzE8oSopKrJaPC9s4jOLzev1EoQAV45okSGbUHtjlITLqYQa2YyKkF4W7xKcFSwxHCWAsRxJiUE0sRjr7SjNMyK3nrO5NHyCEiLcRnKkmsxmZIRor5bPJgTS8JSC+rLEicyphKpVVMEo2ALFIB6Y/CTPCKSq+HkRcsRn3LQXHiLX+1ImivuDlhwpkk33ErmFHs4lJ70vY6ziMzvHqrJ4hicESsjKhm64mrijhhKqEcZc/C8EPTdIdkAmOySjeFYFOamY+MAlIznJxGIcbS8NFEWO8xEypHzJ29IEXQ0SjbyZVkIFORTObMblVBByl9JH5RQYnpBbjOXLECdPCpTzGCM4KZ50ZVMKSs4KJKsEiZxJrf4Ayu4XWX0EWsbQbk7CMxaP7Z7F5n1IITkX72PWeYoTRZGb5pmBmtfqLap8i4wSire0VSoiZ2ZyHktZUQo5gCjGk5CJR0nXC0Fug2d4iicEn1dmdvyWxrhBtAABPOmdNPtZSNGfoKtvPRdHe7vqjn7ibTEsR6gds4SWgktiJO+UimOIHopk07G1ZkCoeovdlsVTSsKV7euinBa+mf8Vwld5uETioP6VL+17Rx8/a8PEBL8w29S/1cyBVSH7vpWbpJpujoNlswqDXRVFYfU2WF227Lob7oa7yq5qS+ekHrJH6iNh37DRyZ3SjHpQ7HCj+J+gKexWsdRsB8FsvdeD+2XJQcQ9471fZjuQrD9vBNvMOGCMrUaB9hk54Rj5x71BXVFrYQY5ldX9H+glx+wjv7g1xGLVy9CCUbzfx2vhn1Tnjft2SA7uaVajAonP5V3AxHWx3SmpnhK4g4hdV/lk/UzV1eqjljDdae1wzUZy2KbKN2vz+GPaFAevfnyl5lNN5B9NFwxww156e6cUVI0KpL3449CjclL4sMCVhKUlOdY9RXEmzDE/eIh2LWVuT44tIKYpL4e7fvLnUgt7lP7o74au0HDjR99nQFzHATY7PvimGFOUqp8/ktaWO3JQfjDpnc4QcS+c+kO1nTqqr3nqGKrd/r1Eu8ljzH0nj0LbfYOLBtFPSeK2nbHlpiq0vhhKD0V0LVryaR+U6imBwRXrgwer5cSyT11qv7qlHzuvfN4NPTk5pO8z2IyWQgw/V/rGtr3UkYPSzbYnhvLKk6ZC1Mx7EC35ZgGk99p43pl1QFfD2m4+19jjvgFvq+r89htK1K5BpZh7jDSbfE3NbpTParUo9FVmNFh9NGLzPae50/MMYKMN0c8Pb742kDELAdRw+Q7pnATxjbnq5PXnA2RH1VQX9TK2MEksRno10ZGD4p2mF/LLhsIvfd2QF7Z6VywxbZfl55l16GbWoX1ut2WmZeioe7Hox6Ja8X/CKsO6TdxsBKs3IlF/Lfqyf/VFYDj91pCtbd74j49u9WpVekg60vWkww1ye6TkloE8S+pvIXL318biWRERmpr1FVlPMjuPaLQz7nwk2DaRzri6jQLmXrycMeh7csjd/y68v+x0bxFqt5EjaY27mdgs0Fi7Znov/8RxS7b3S84+Mybj5qSCjBtnRmUhHptN42cHDjcvqikR76Ruqcy/EZDx+4m22XLruJjxzZY90Wb8vhlQnp+6ZVCEIaJRvn/34UOGdrcbOvaOHTK4t11PoPZBzfHBaeuSktLWHB84znlyYNoaJCIxbd3Jwc4O77tGt2/btd33M13atW3XpUP7Hq+/NQDbpkFgl08NEugf9H8Nup+zsSH1Aj7ODN4k9Gugt1LL9OEEWtDnb7xZ/2u9XwHxSDaB96MWqSMEz5QflU0n5UX+F9eoESRio81xJyNhrPlo2tdxsvGKl38bhYY1Cq86BGFKJbYpSsnSWQawbQwtzi8j81jYE8aKEvGH/pfefO7NOco6O3DdtETr6H/vGGZMu20Y8681wT11RpDppWyX2s9b0cBfayHCfw7P76tXXv7TNwfacw+0rzLz9Hnpsdd7htSp1ad63z69qtOSHiH9AAAgABB9tG0bLewyXNHut5SSAgCeZwybBQBv+U3TqyqrmkneSXIAsCCBJXZVpS8gRYkI5Nl/dxEp3b1E8gGtEAEdqiPiAis43wRGVv2DVBTajIAccfCFHLX7oS0YFnEUYZAASMB5lcUgUCBoH9G3A5wEdGjnJCHHECeFFki9SZc7GWjhfo8EOhxFJ4zASGRhNBxIRgrGQoctN3UkmkCUDT1zIf0F3RTqccjsN0QqHAfoC0CiGhIln4BYhgRN3oB06ccjDf1yh8kYh3T+203RCFFogtZoi06wwIr+aIv7NmTbfjMaY+DACGRCx5eDkhTO/qq64DEA) format('woff2');
   font-weight:900;font-style:normal;font-display:block;
   unicode-range:U+AC83,U+AE00,U+B00C,U+B010,U+B04C,U+B193,U+B358,U+B3CC,U+B418,U+B530,U+B86C,U+BBF8,U+BC84,U+BCF4,U+C0C8,U+C5E3,U+C6E8,U+D0DC,U+D30C,U+D655;
+}
+
+/* 보충 글자 2(K-Task 카드·7부작 문구) — 위 글꼴에 없는 글자만 */
+@font-face{
+  font-family:'Pretendard';
+  src:url(data:font/woff2;base64,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) format('woff2');
+  font-weight:400;font-style:normal;font-display:block;
+  unicode-range:U+A0,U+AC70,U+ACF1,U+B044,U+B220,U+B2A5,U+B978,U+BB34,U+BB36,U+BCF8,U+BE60,U+C131,U+C138,U+C571,U+CF1C,U+D0ED;
+}
+@font-face{
+  font-family:'Pretendard';
+  src:url(data:font/woff2;base64,d09GMgABAAAAAAcsAAwAAAAADHQAAAbdAAFPGgAAAAAAAAAAAAAAAAAAAAAAAAAAGyAcgnwGYACBLAqNLIpBATYCJANQCyoABCAFgjwHIBsOCqOihHJ6Af6xYLrdBem2i10NIYMjoWj6lJ3MZtoIQl905Xfy6XHT90OQilPxVHQmhtSFysQNmDMRp+rcLoUJE/NcWJyqbuJKsp1TOIrLNsDPc7xLH2IjZIAPgcIdHt5u71b7u0ybR3lyIO22KAgwooAiiyyR/8P9Uv+7iLAqxRN5/yJybZ0UZbMBbjyQDMorWttwE26QjQxm25AStwRoezN3VivY1w0CsObDD1mHj5VBggbAYgEAgNG3lYYabX8mz8iHPTKqH5Ht0IR7smoGmG5pQrsqO9P2mJ2dhraXfWcAASqhUuUKCNnq6Bl+oRAACAlCimLNMRWducS5cr2ECxFAxFmovqLMsAYChBqEwdYCNEFgWS3Wg4ote4IesRtV9zEQKvL2H1k3foj2edjXI3Rdm48ILyCFGBrji5c6c9FSnAAAkm4RZ0T73nZFfkJx8/NFXNDxUnoIQTjTzYA9thX10VMb2kgGx2gaQBXqcAxp8inQQWf4OO7jncHKkk87oKYX4Qkxw7ZAgRQAqRUiIqZpf5OBGDSK7kzhma8Xhl5iLh29Oed219vd9cr8KU4q61TWs2pqi4/ho8UCuL8AS/KU7VNcJnyNezUuZfiWoa1D2SEugz77m/sbe+/v+KNDMITiSO0dDtAZkPsA6iUxaM+aNDLYApYqpCyEAACJrackWSKVYZApZIgkHN9PLSKhqNY0BWloI8nJ/GzNxsCsfrz7Iklhev1AaY9zf2ZlCpNJ6UjWtpHKTvNdRZdF/RoLdGDZuyDtA6Ut1tV9W+KLB1tl5l2++3iulLMyOvTb7NAdhZlqX4RO82nUIcenrXKWfWL9+sxIXkzoOMuKZavNm0lpNJKY27ibJ8i0bhNWG8844dqLmBbsB2fhele5dHtHLK1ApY0DLaOXxAX7hNsDKjZfOCb+k20RZpq7g4ms+52zp7Lzxka37cn/ra1ymdGoYBcBz7EkQzMNzLLMz7QJGw6WoKPVaP1/LzIUcwx4QNipDTPQRkNX79bPKoylGDkmued1/TKsiI3WOTn7Knf/t8w+eCg2Z9BzpUpRYNqgfgEZAdmonH0isx5rR3D+tlycOvAGvyXHkKPn459uN6Vv6KJdXvOsINBePdylIbY2DglHL6x0fMKs/+vupnK+RWJ/1f+yXb4sU4fG/Egu0nFM8osP53jzGzP/3uHQh0PoFBLlg7X2z3uO7d38P2zk+67zqbPpjWm9hXMyS3Gnfr3WK4J3iJ4xI4MqLJ7t3vvNx/VVjSuQWnoDujmVc65BKVjg+8nxoZtdkdnni91x7Eunyjf4Ng3BlQ0zcGIDEg8bvs3hz/y43SMLMGQBiwZ7T9CokY0cjcZ7fFWN73itJjdHq/adUI2SmluDMZwMLxmpv5HQPgLD9YNvE+Qml2YxaKQyrIOCJz7BD4TbUysc3y2zLZ2ow583Cz5UfgAO2F8r42TF8lQ1Fb8e/RpwyI0byyFBcMq8yNw/4MqbD2/GDObKdaIF3KXC3RPH8pdU9cG64sbMUoBJV92/xt/J3aWu52jU737zhrvnfej+oQH0/j80ev5BckXlDfbGCQ5iH25iyugZxwysG3tHPJTaNmNbbOyspJGyzeK0FzBrG9rLPkU9uHV8Q5uVNZs71V/ttbD/tsfsgW4rG3Z2qLmW8A7Lj1G7uz7vzNsqDIrxvBcb4zlFsx/5yNfs85hcXl73Ue8rKFDvf7Jp2bUq/bjxY4rHX71W8vOPO5/2OsKeH9uz9WzB2qoHKxI6dD5w/MfsEXtuF8+6dILr/ad9/5DJPyD2+eH+qvbTtg+GD2M/IURNinNUpZiHuRmvMXPnFuXklM6bX5A3nQN5Q+a0zNSsQrmM/jEiBRlZ06aQEYFnvm3Trvp04VOMdt63/nTji2PcE/MT7rnLkRdH0K/K1XlL3jMeYj9+ybn6c4GaEVYpxwccXV/CFrpZJmgdOgSYlob45lmvHtU4El3Tu5tX1JfWrz9IPjrMlno2qd0C7J+QBRmGjhXHvh3av+OT+dOc/dpv/elHL9RcsbmYe/5V/UIdCQBAAGTz6p7VqT6x9v2ZuAKAp3lnmwDgtdsJX0hz5MBGBggxCgAQED+8M0hAyi1Y5MNM1MFachdEP0Ew9ITukWCOdCV6dxgKoSCF/hA+fZYPgPgG/ozEPQjPAQiKHxEgzX2WWAwBMk6AvtA2ElJ9jRSJiUaBrqKMND8bjEJeTpUj4qcSQxQoNNc02TJlmYFxksWddQx0KeWPkU2FMdJcM+XL1E6ObPkmmibdDEIupEkW6zSDFVC9707a66KjXvoYQkZuij5R0XYyM4LJFBTSRTtdtoJFzChz6TkloBxZIukB) format('woff2');
+  font-weight:700;font-style:normal;font-display:block;
+  unicode-range:U+A0,U+AC70,U+ACF1,U+B044,U+B220,U+B2A5,U+B978,U+BB34,U+BB36,U+BCF8,U+BE60,U+C131,U+C138,U+C571,U+CF1C,U+D0ED;
+}
+@font-face{
+  font-family:'Pretendard';
+  src:url(data:font/woff2;base64,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) format('woff2');
+  font-weight:900;font-style:normal;font-display:block;
+  unicode-range:U+A0,U+AC70,U+ACF1,U+B044,U+B220,U+B2A5,U+B978,U+BB34,U+BB36,U+BCF8,U+BE60,U+C131,U+C138,U+C571,U+CF1C,U+D0ED;
 }
 
 /* ── Tokens ───────────────────────────────────────────────── */
@@ -672,6 +697,7 @@ a{color:inherit}
       <a href="#k-memo">K-Memo</a>
       <a href="#k-zone">K-Zone</a>
       <a href="#k-ext">K-Ext</a>
+      <a href="#k-task">K-Task</a>
     </nav>
     <button class="toggle" id="themeToggle" type="button" aria-label="밝은 테마와 어두운 테마 전환">
       <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -681,18 +707,18 @@ a{color:inherit}
 
   <section class="hero">
     <p class="eyebrow rise">K · S E R I E S</p>
-    <h1 class="rise">알툴즈를 대체하는, <em>나만의 데스크톱 6부작</em></h1>
-    <p class="lede rise">코인 트레이더가 매일 쓰는 도구가 마음에 안 들어서, 직접 설계하고 만들었다. 시계부터 음악, 영상, 메모, 창 정리, 확장 설치까지 — 여섯 개의 프로그램이 하나의 손끝에서 나왔다.</p>
+    <h1 class="rise">알툴즈를 대체하는, <em>나만의 데스크톱 7부작</em></h1>
+    <p class="lede rise">코인 트레이더가 매일 쓰는 도구가 마음에 안 들어서, 직접 설계하고 만들었다. 시계부터 음악, 영상, 메모, 창 정리, 확장 설치, 작업 관리까지 — 일곱 개의 프로그램이 하나의 손끝에서 나왔다.</p>
 
     <div class="stats glass rise">
-      <div><b>6</b> 프로그램</div>
+      <div><b>7</b> 프로그램</div>
       <div><b>100%</b> 자체 제작</div>
       <div>Windows 데스크톱</div>
     </div>
 
     <figure class="intro glass rise">
       <video id="introFilm" muted loop playsinline preload="none"
-             aria-label="K-시리즈 여섯 프로그램을 차례로 보여 주는 소개 영상(소리 없음)"></video>
+             aria-label="K-시리즈 일곱 프로그램을 차례로 보여 주는 소개 영상(소리 없음)"></video>
     </figure>
 
     <!-- 폰(720px 이하)에서만: 영상 아래 앱 바로가기 줄 — 누르면 그 앱 칸으로 -->
@@ -946,6 +972,11 @@ a{color:inherit}
 </defs><rect x="4" y="4" width="88" height="88" rx="25" fill="url(#gext_p)"/><rect x="4" y="4" width="88" height="88" rx="25" fill="url(#bext_p)"/><path d="M4 29C4 15.2 15.2 4 29 4h38c13.8 0 25 11.2 25 25v9c-16 8-30.7 11.6-44 11.6S22.5 45.4 4 34.6V29Z" fill="url(#sext_p)"/><g transform="translate(0.9 1.1)" fill="#1F4A0E" fill-opacity=".26"><path d="M30 12h16v34h12L38 70 18 46h12Z" stroke="#1F4A0E" stroke-opacity=".26" stroke-width="3.2" stroke-linejoin="round"/><rect x="14" y="76" width="38" height="6" rx="3"/></g><g fill="url(#whext_p)"><path d="M30 12h16v34h12L38 70 18 46h12Z" stroke="#FFFFFF" stroke-width="3.2" stroke-linejoin="round"/><rect x="14" y="76" width="38" height="6" rx="3"/></g><path d="M38 21V49" stroke="#3E7F18" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="2.8 2.8" fill="none"/><rect x="34.2" y="14" width="7.6" height="4.6" rx="2.3" fill="#3E7F18"/><g clip-path="url(#kbcext_p)"><circle cx="71.4" cy="72.8" r="22.5" fill="url(#kbsext_p)"/></g><circle cx="71.4" cy="71.4" r="15.985" fill="url(#kbfext_p)" stroke="url(#kbrext_p)" stroke-width="2.75"/><circle cx="71.4" cy="71.4" r="14.61" fill="url(#kbgext_p)"/><circle cx="71.4" cy="71.4" r="17.72" fill="none" stroke="#000" stroke-opacity=".12" stroke-width=".7"/><g fill="none" stroke="#fff" stroke-opacity=".97" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M67.35 65.15V77.65"/><path d="M75.45 65.15L68.65 71.4L75.45 77.65"/></g><rect x="4.75" y="4.75" width="86.5" height="86.5" rx="24.25" fill="none" stroke="#fff" stroke-opacity=".34" stroke-width="1.5"/><rect x="4.25" y="4.25" width="87.5" height="87.5" rx="24.75" fill="none" stroke="#000" stroke-opacity=".16" stroke-width=".5"/></svg>
         <span class="pane-name">K-Ext</span>
         <span class="pane-ver">v0.1.3</span>
+      </a>
+      <a class="pane glass" href="#k-task" role="listitem" style="--tint:rgba(38,128,117,.32)">
+        <img class="ico" src="media/ktask-logo.png" width="48" height="48" alt="" decoding="async">
+        <span class="pane-name">K-Task</span>
+        <span class="pane-ver">v1.0.0</span>
       </a>
     </nav>
     <script>
@@ -1296,6 +1327,24 @@ a{color:inherit}
         </a>
       </div>
     </article>
+
+    <!-- 7 · K-Task -->
+    <article class="app glass rise" id="k-task" style="--tint:rgba(38,128,117,.30);--tint-deep:rgba(29,107,97,.42);--ti-l:#1D6B61;--ti-d:#7FD3C3">
+      <div class="well"><div class="badge"><img class="ico" src="media/ktask-logo.png" width="96" height="96" alt="" decoding="async"></div></div>
+      <div class="copy">
+        <div class="meta"><span class="domain">System</span><span class="rule"></span><span class="ver">v1.0.0</span></div>
+        <h2>K-Task</h2>
+        <p class="role">가볍고 빠른 작업 관리자</p>
+        <p class="hook">무거운 프로그램을 바로 찾아 끝내고, 브라우저는 탭별로 나눠 본다.</p>
+        <ul class="chips">
+          <li>앱별로 묶인 프로세스</li><li>웨일·크롬·엣지 탭별 보기</li><li>성능 그래프 다섯 가지</li><li>시작 앱 켜고 끄기</li>
+        </ul>
+        <a class="dl" href="https://ktask-dl.krisb-infra.com" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v13M6 11l6 6 6-6M4 21h16"/></svg>
+          다운로드
+        </a>
+      </div>
+    </article>
   </main>
 
   <footer class="foot glass rise">
@@ -1316,7 +1365,9 @@ a{color:inherit}
     if(!cur){
       cur = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
-    root.setAttribute('data-theme', cur === 'dark' ? 'light' : 'dark');
+    var next = cur === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try{ localStorage.setItem('kseries-theme', next); }catch(e){}
   });
 
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
